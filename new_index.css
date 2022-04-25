@@ -1,0 +1,124 @@
+
+body {
+    background-color: grey;
+  }
+  
+  #all_contents {
+    border: 1px solid magenta;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 33px;
+    position: relative;
+    top: 51px;
+  }
+
+  .song_container {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+    border-radius: 20px;
+    text-align: left;
+    margin: 20px;
+    padding: 20px;
+    width: 700px;
+    height: 100px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .like_bttn {
+    background-color: lightgreen;
+    color: black;
+    text-align: center;
+    border: 2px solid black;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    position: absolute;
+    right: 120px;
+    top: 1px;
+    bottom: 1px;
+  }
+  .dislike_bttn {
+    background-color: crimson;
+    color: black;
+    text-align: center;
+    border: 2px solid black;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    position: absolute;
+    right: 10px;
+    top: 1px;
+    bottom: 1px;    
+  }
+  
+  /* #leftPaddle{
+    background-color: orange;
+    width: 20px;
+    height: 80px;
+    border-radius: 10px;
+    position: absolute;
+    left: 30px;
+    top: 180px;
+  }
+  
+  #rightPaddle{
+    background-color: magenta;
+    width: 20px;
+    height: 80px;
+    border-radius: 10px;
+    position: absolute;
+    left: 390px;
+    top: 180px;
+  }
+  
+  #player1ScoreBox{
+    border: 1px solid  orange;
+    background-color: black;
+    color: orange;
+    width: 50px;
+    height: 50px; 
+    position: absolute;
+    left: 0px;
+    top: 460px;
+    text-align: center;
+    font-size: 33px;
+  } 
+  
+  #player2ScoreBox{
+    border: 1px solid magenta;
+    background-color: black;
+    color: magenta;
+    width: 50px;
+    height: 50px; 
+    position: absolute;
+    left: 390px;
+    top: 460px;
+    text-align: center;
+    font-size: 33px;
+  }
+  
+  #countdownBox{
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    width: 440px;
+    height: 50px; 
+    position: absolute;
+    left: -1px;
+    top: -51px;
+    text-align: center;
+    font-size: 33px;
+  }
+  
+  #ball {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 210px;
+    top: 210px;
+  }   */

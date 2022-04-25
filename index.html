@@ -1,104 +1,26 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-      <title>Jukebox.exe</title>
-      <style>
-    body {
-        background: rgb(0, 0, 0);
-        color: rgb(0, 0, 0);
-        padding: 10px;
-        font-family: Comic Sans MS;
-    }
-    #all-contents {
-        max-width: 800px;
-        margin: auto;
-    }
-
-    /* navigation menu */
-    nav {
-        background: rgb(255, 0, 0);
-        margin: 0 auto;
-        display: flex;
-        padding: 10px;
-    }
-    nav h1 {
-        display: flex;
-        align-items: center;
-        color: white;
-        flex: 1;
-        margin: 0;
-    }
-    nav ul {
-        list-style-image: none;
-    }
-    nav li {
-        display: inline-block;
-        padding: 0 10px;
-    }
-    nav a {
-        text-decoration: none;
-        color: white;
-    }
-
-    /* main container area beneath menu */
-    main {
-        background: rgb(0, 0, 255);
-        display: flex;
-    }
-    .sidebar {
-        margin-right: 25px;
-        padding: 10px;
-    }
-    .sidebar img {
-        width: 200px;
-    }
-    .content {
-        flex: 1;
-        padding: 15px;
-        color: white;
-    }
-    h2, h3 {
-        margin: 0px;
-    }
-</style>
-    </head>
+  <head>
+    <title>Title</title>
+    <!-- Load CSS files -->
+    <link rel="stylesheet" type="text/css" href="index.css">
     
-    <body>
-      <div id="all-contents"> 
-        <nav>
-            <h1>It Be Jukebox Hours</h1>
-            <ul>
-                <li>
-                    <a href="index.html"> Home </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Suggest A Song, idk</a>
-                </li>
-            </ul>
-        </nav>
-
-        <main> 
-            <div class="sidebar">
-                <img src="RickAstleyNeverGonnaGiveYouUp7InchSingleCover.jpg" alt="logo">
+    <!-- Load JavaScript files -->
+    <script src="jquery.min.js"></script>
+    <script src="index.js"></script>
+  </head>
+  
+  <body>
+    <div id='board'>
+      <div id='leftPaddle'></div>
+      <div id="rightPaddle"></div>
+      <div id="ball"></div>
+      <div id= 'player1ScoreBox'></div>
+      <div id= 'player2ScoreBox'></div>
+      <div id= 'countdownBox'></div>
+      <div id= 'line'></div>
       
-            </div>
-
-            <div class="content">
-                  <h2>Currently Playing:</h2>
-                  <p>Never Gonna Give You Up by Rick Astley</p>
-                    <!-- <div class="interests">
-                        <h3>Blah blah blah</h3>
-                        <ul>
-                            <li>point1</li>
-                            <li>point2</li>
-                            <li>point3</li>
-                        </ul>
-                    </div> -->
-
-                    </div>
-            </div>
-
-        </main>
     </div>
-    </body>
+    
+  </body>
 </html>
