@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mobile Jukebox Voting</title>
+        <!-- Load CSS files -->
+        <link rel="stylesheet" type="text/css" href="{% static 'api/phone_voting.css' %}">
+        
+        <!-- Load JavaScript files -->
+        <script src="{% static 'api/jquery.min.js' %}"></script>
+        <script src="{% static 'api/phone_voting.js' %}"></script>
+    </head>
+    <body>
+        <div class = "allSongs">
+            <!-- {% for song in allsongs %}
+                <div class="song_container" id= "container{{  forloop.counter }}">
+                    <p class="song_name" id= "song{{  forloop.counter }}">{{ song.title }}</p>
+                    <button class="like_bttn" id= "like{{  forloop.counter }}"></button>
+                    <button class="dislike_bttn" id= "dislike{{  forloop.counter }}"></button>
+                </div>
+            {% endfor %} -->
+            <div class="song_container" id= "container0">
+                <p class="song_name" id= "song0">song0</p>
+            </div>
+            <div class="song_container" id= "container1">
+                <p class="song_name" id= "song1">song1</p>
+            </div>
+            <div class="song_container" id= "container2">
+                <p class="song_name" id= "song2">song2</p>
+            </div>
+            <div class="song_container" id= "container3">
+                <p class="song_name" id= "song3">song3</p>
+            </div>
+            <div class="song_container" id= "container4">
+                <p class="song_name" id= "song4">song4</p>
+            </div>
+            <div class="song_container" id= "container5">
+                <p class="song_name" id= "song5">song5</p>
+            </div>
+            <div class="song_container" id= "container6">
+                <p class="song_name" id= "song6">song6</p>
+            </div>
+            <div class="song_container" id= "container7">
+                <p class="song_name" id= "song7">song7</p>
+            </div>
+            <div class="song_container" id= "container8">
+                <p class="song_name" id= "song8">song8</p>
+            </div>
+            <div class="song_container" id= "container9">
+                <p class="song_name" id= "song9">song9</p>
+            </div>
+            <div class="song_container" id= "container10">
+                <p class="song_name" id= "song10">song10</p>
+            </div>
+            <div class="song_container" id= "container11">
+                <p class="song_name" id= "song11">song11</p>
+            </div>
+            <div class="song_container" id= "container12">
+                <p class="song_name" id= "song12">song12</p>
+            </div>
+            <div class="song_container" id= "container13">
+                <p class="song_name" id= "song13">song13</p>
+            </div>
+            <div class="song_container" id= "container14">
+                <p class="song_name" id= "song14">song14</p>
+            </div>
+            <div class="song_container" id= "container15">
+                <p class="song_name" id= "song15">song15</p>
+            </div>
+            <div class="song_container" id= "container16">
+                <p class="song_name" id= "song16">song16</p>
+            </div>
+            <div class="song_container" id= "container17">
+                <p class="song_name" id= "song17">song17</p>
+            </div>
+            <div class="song_container" id= "container18">
+                <p class="song_name" id= "song18">song18</p>
+            </div>
+            <div class="song_container" id= "container19">
+                <p class="song_name" id= "song19">song19</p>
+            </div>
+        </div>
+    </body>
+</html>

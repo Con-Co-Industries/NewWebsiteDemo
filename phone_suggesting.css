@@ -1,0 +1,25 @@
+
+body {
+  background-color: grey;
+}
+
+input{
+  padding: 1px;
+  margin: 0px 2px;
+}
+
+.song_container {
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(93, 93, 93);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  /* overflow: hidden; */
+  padding: 10px 20px;
+  text-align: left;
+  margin: 4px;
+  position: relative;
+  max-width: 500px;
+  /* height: 20px; */
+}
