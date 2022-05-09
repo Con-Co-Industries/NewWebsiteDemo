@@ -6,92 +6,55 @@ function runProgram(){
   ////////////////////////////////////////////////////////////////////////////////
   //////////////////////////// SETUP /////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
-  
-  const colors = {
-    "green": "#4CAF50",
-    "red" : "rgb(186, 93, 93)",
-    "gray" : "rgb(93, 93, 93)"
-  }
 
-  let songContainer = [];
-  let songName = [];
-  let likedSongs = [];
-  let dislikedSongs = [];
+  const songContainer = ObjectFactory('.song_container','#currentSongContainer');
+  const songName = document.getElementById('currentSong').innerText;
+  console.log(songName);
+  const pause = ObjectFactory(null,'#pause');
+  const play = ObjectFactory(null,'#play');
+  const skip = ObjectFactory(null,'#skip');
+  
+  $(play.id).hide();
 
-  const songAmnt = $(".allSongs").children().length;
-  
-  for (let i = 1; i < songAmnt+1; i++) { // for some unholy reason the songAmnt starts at 1 not 0
-    songContainer.push(ObjectFactory('.song_container','#container'+i));
-    songName.push($("#song"+i).text());
-  };
-  
-  startup();
-  
+  $(pause.id).on('click', pauseSong);
+  $(play.id).on('click', playSong);
+  $(skip.id).on('click', skipSong);
+
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// FUNCTIONS ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
   
   function ObjectFactory($class, $id){ //PogChamp
     let element = {};
-    element.class = $class;
+    if ($class != null){
+      element.class = $class;
+    }
     element.id = $id;
     return element;
   }
 
-  function startup() {
-    for (let i = 1; i < songAmnt+1; i++){
-      let l = document.getElementById('like'+ i);
-      let dl = document.getElementById('dislike'+ i);
-      l.addEventListener('touchstart', handleTouch);
-      dl.addEventListener('touchstart', handleTouch);
-      console.log('Initialized ' + i);
-    };
+  function pauseSong(){
+    $(pause.id).hide();
+    $(play.id).show();
+    postCommand('pause');
+    document.getElementById('currentSong').innerText = "Paused";
   }
 
-  function handleTouch(evnt){
-    evnt.preventDefault();
-    let buttonID = this.id;
-    console.log(buttonID);
-    let buttonNum = buttonID.slice(buttonID.length - 1);
-    console.log(buttonNum);
-    if (buttonID.includes('dis')){
-      songVoteDislike(buttonNum);
-    }
-    else{
-      songVoteLike(buttonNum);
-    }
+  function playSong(){
+    $(play.id).hide();
+    $(pause.id).show();
+    postCommand('play');
+    document.getElementById('currentSong').innerText = songName;
   }
 
-  function songVoteLike(song){
-
-    postVote(song, 'yes');
-    // console.log("Posted: {'topic': "+ songName[song] + ",");
-    // console.log("'choice': 'yes'}");
-    
-    likedSongs.push(song);
-    if (dislikedSongs.includes(song)){
-      dislikedSongs.splice(song, 1);
-    }
-    colorSetter(song);    
+  function skipSong(){
+    postCommand('skip');
+    window.location.reload();
   }
 
-  function songVoteDislike(song){
-    
-    postVote(song, 'no');
-    // console.log("Posted: {'topic': "+ songName[song] + ",");
-    // console.log("'choice': 'no'}");
-    
-    dislikedSongs.push(song);
-    if (likedSongs.includes(song)){
-      likedSongs.splice(song, 1);
-    }
-    colorSetter(song);
-  }
-
-  function postVote(song, vote){
+  function postCommand(command){
     const data = {
-      'topic': songName[song],
-      'choice': vote
+      'command': command
     };
     const options = {
       method: 'POST',
@@ -100,19 +63,6 @@ function runProgram(){
       },
       body: JSON.stringify(data)
     };
-    fetch('/api/weekly-vote/', options);
-  }
-
-  function colorSetter(song){
-    if (likedSongs.includes(song)) {
-      $(songContainer[song].id).css("border-color", colors.green);
-    }
-    else if (dislikedSongs.includes(song)){
-      $(songContainer[song].id).css("border-color", colors.red);
-    }
-    else{ // if it hasn't been voted on, set the color manually
-      return(false);
-    }
-    return(true);
+    fetch('/api/control-song/', options);
   }
 };

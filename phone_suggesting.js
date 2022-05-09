@@ -4,7 +4,7 @@ $(document).ready(runProgram); // wait for the HTML / CSS elements of the page t
   
 function runProgram(){
 
-  const debugging = true; //set this to false when you actually want to post info
+  const debugging = false; //set this to false when you actually want to post info
 
   //document.getElementById("submitButton").addEventListener("click", beginSubmission);
   $('#submitButton').on('click', beginSubmission);
